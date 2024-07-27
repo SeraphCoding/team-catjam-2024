@@ -1,15 +1,18 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float interactionRadius = 2f;
     public bool freezePlayer = false;
     
     private PlayerControls _playerControls;
     private Vector2 _movement;
     private Rigidbody2D _body;
     private Animator _anim;
+    private Interactable _interactable;
 
     private void Start()
     {
@@ -21,6 +24,7 @@ public class Player : MonoBehaviour
         _playerControls = new PlayerControls();
         _body = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+        _playerControls.Interaction.Interact.started += Interact;
     }
 
     private void OnEnable()
@@ -30,10 +34,41 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        Interactables();
+
         if (freezePlayer) return;
         PlayerInput();
     }
-    
+
+    private void Interact(InputAction.CallbackContext _)
+    {
+        _interactable?.Interact();
+    }
+
+    private void Interactables()
+    {
+        float closestDist = float.PositiveInfinity;
+        Interactable closest = null;
+        foreach (Collider2D collider in Physics2D.OverlapCircleAll(transform.position, interactionRadius)) {
+            Interactable i = collider.GetComponent<Interactable>();
+
+            if (!i || !i.isInteractable) continue;
+
+            float dist = (i.transform.position - transform.position).sqrMagnitude;
+            if (dist < closestDist) {
+                closest = i;
+                closestDist = dist;
+            }
+        }
+
+        if (closest == _interactable) return;
+
+        if (_interactable) _interactable.UnHover();
+
+        _interactable = closest;
+
+        if (_interactable) _interactable.Hover();
+    }
 
     private void FixedUpdate() 
     {
