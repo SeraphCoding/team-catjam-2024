@@ -4,11 +4,17 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
+    public bool freezePlayer = false;
     
     private PlayerControls _playerControls;
     private Vector2 _movement;
     private Rigidbody2D _body;
     private Animator _anim;
+
+    private void Start()
+    {
+        StopAnimation();
+    }
 
     private void Awake()
     {
@@ -24,6 +30,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (freezePlayer) return;
         PlayerInput();
     }
     

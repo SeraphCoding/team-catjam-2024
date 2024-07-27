@@ -684,6 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogController: {fileID: 1152573033}
+  player: {fileID: 1287062017}
 --- !u!1 &1152573029
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +812,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cf5b9ec5a0b0f6046a0dbcb60f74956e, type: 3}
   textGameObject: {fileID: 148791262}
   avatarGameObject: {fileID: 2035819687}
+--- !u!114 &1287062017 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6618237633595991665, guid: 33aeafee9db6d7cd59cd488d132f2496, type: 3}
+  m_PrefabInstance: {fileID: 7206546593086638263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc2aa16660fabcf19f84eab7ebc1e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1287062020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5823068821541578275, guid: 33aeafee9db6d7cd59cd488d132f2496, type: 3}

@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 /// <summary>
@@ -36,6 +34,7 @@ public class DialogController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         gameObject.SetActive(showDialog);
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
             _currentIndex++;
