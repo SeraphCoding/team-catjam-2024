@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Interactable : MonoBehaviour
 {
     public SpriteRenderer renderer;
-    [SerializeField]
-    protected bool _interactable = true;
-    public bool isInteractable { get { return _interactable; } }
+    [FormerlySerializedAs("_interactable")] [SerializeField]
+    protected bool interactable = true;
+
+    private static readonly int OutlineThickness = Shader.PropertyToID("_OutlineThickness");
+    public bool IsInteractable => interactable;
 
     public virtual void Interact()
     {
@@ -16,11 +19,11 @@ public class Interactable : MonoBehaviour
 
     public void Hover()
     {
-        renderer.material.SetFloat("_OutlineThickness", 1);
+        renderer.material.SetFloat(OutlineThickness, 1);
     }
 
     public void UnHover()
     {
-        renderer.material.SetFloat("_OutlineThickness", 0);
+        renderer.material.SetFloat(OutlineThickness, 0);
     }
 }

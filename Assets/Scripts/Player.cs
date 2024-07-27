@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         foreach (Collider2D overlappingCollider in Physics2D.OverlapCircleAll(transform.position, interactionRadius)) {
             Interactable i = overlappingCollider.GetComponent<Interactable>();
 
-            if (!i || !i.isInteractable) continue;
+            if (!i || !i.IsInteractable) continue;
 
             float dist = (i.transform.position - transform.position).sqrMagnitude;
             if (dist < closestDist) {

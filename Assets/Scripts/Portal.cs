@@ -15,10 +15,10 @@ public class Portal : Interactable
         bool active = false;
 
         foreach (Lantern lantern in lanterns) {
-            active = active || lantern.isInteractable;
+            active = active || lantern.IsInteractable;
         }
 
-        _interactable = !active;
+        interactable = !active;
     }
 
     void FixedUpdate()

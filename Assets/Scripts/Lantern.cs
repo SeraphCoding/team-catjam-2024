@@ -13,6 +13,6 @@ public class Lantern : Interactable
         base.Interact();
         light.gameObject.SetActive(false);
         GetComponent<SpriteRenderer>().sprite = unlitSprite;
-        _interactable = false;
+        interactable = false;
     }
 }
