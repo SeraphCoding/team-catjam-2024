@@ -7,6 +7,8 @@ public class Interactable : MonoBehaviour
 {
     public SpriteRenderer renderer;
     protected bool interactable = true;
+    // Action that will be performed on interaction, to display in the HUD as a hint.
+    [SerializeField] public string action;
 
     private static readonly int OutlineThickness = Shader.PropertyToID("_OutlineThickness");
     public bool IsInteractable => interactable;

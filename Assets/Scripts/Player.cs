@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private static readonly int X = Animator.StringToHash("X");
     private static readonly int Y = Animator.StringToHash("Y");
 
+    public Interactable Interactable => _interactable;
+    
     private void Start()
     {
         StopAnimation();
