@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D _body;
     private Animator _anim;
     private Interactable _interactable;
+    private static readonly int X = Animator.StringToHash("X");
+    private static readonly int Y = Animator.StringToHash("Y");
 
     private void Start()
     {
@@ -49,8 +51,9 @@ public class Player : MonoBehaviour
     {
         float closestDist = float.PositiveInfinity;
         Interactable closest = null;
-        foreach (Collider2D collider in Physics2D.OverlapCircleAll(transform.position, interactionRadius)) {
-            Interactable i = collider.GetComponent<Interactable>();
+        // Might cause performance issues if there are many interactables in the specified radius.
+        foreach (Collider2D overlappingCollider in Physics2D.OverlapCircleAll(transform.position, interactionRadius)) {
+            Interactable i = overlappingCollider.GetComponent<Interactable>();
 
             if (!i || !i.isInteractable) continue;
 
@@ -83,8 +86,8 @@ public class Player : MonoBehaviour
             if (_anim.speed != 0) StopAnimation();
         } else {
             if (_anim.speed == 0) StartAnimation();
-            _anim.SetFloat("X", _movement.x);
-            _anim.SetFloat("Y", _movement.y);
+            _anim.SetFloat(X, _movement.x);
+            _anim.SetFloat(Y, _movement.y);
         }
     }
 
