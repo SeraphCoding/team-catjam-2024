@@ -6,7 +6,6 @@ using UnityEngine.Serialization;
 public class Interactable : MonoBehaviour
 {
     public SpriteRenderer renderer;
-    [FormerlySerializedAs("_interactable")] [SerializeField]
     protected bool interactable = true;
 
     private static readonly int OutlineThickness = Shader.PropertyToID("_OutlineThickness");
