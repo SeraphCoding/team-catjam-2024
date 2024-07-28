@@ -60,7 +60,7 @@ public class LightDetector : MonoBehaviour
             }
         }
 
-        Debug.Log($"Red: {hitBy["Red"]}\nGreen: {hitBy["Green"]}\nBlue: {hitBy["Blue"]}");
+        //Debug.Log($"Red: {hitBy["Red"]}\nGreen: {hitBy["Green"]}\nBlue: {hitBy["Blue"]}");
     }
 
     public float FalloffThreshold(float inner, float outer, float falloffIntensity)
