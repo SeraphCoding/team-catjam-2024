@@ -21,6 +21,10 @@ PrefabInstance:
       value: R Filter
       objectReference: {fileID: 0}
     - target: {fileID: 6117620092961548786, guid: d9762a2e987317120a0a403ef045d92a, type: 3}
+      propertyPath: m_InstanceId
+      value: -40992
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117620092961548786, guid: d9762a2e987317120a0a403ef045d92a, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -77,7 +81,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2905928426699055311, guid: d9762a2e987317120a0a403ef045d92a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9762a2e987317120a0a403ef045d92a, type: 3}

@@ -35,16 +35,17 @@ public class LightDetector : MonoBehaviour
         foreach (Transform l in lights) {
             Light2D light = l.GetComponent<Light2D>();
             foreach (Transform offset in offsets) {
+                float distance = (light.transform.position - transform.position).magnitude;
                 //Debug.Log($"{Mathf.Pow(FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity), 2)},{(light.transform.position - transform.position).sqrMagnitude}");
-                if (Mathf.Pow(FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity), 2)
-                    < (light.transform.position - transform.position).sqrMagnitude)
+                if (FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity)
+                    < distance)
                     continue;
 
                 int layerMask = 1 << 10;
                 if (light.name == "Green") layerMask <<= 1;
                 if (light.name == "Blue") layerMask <<= 2;
 
-                RaycastHit2D hit = Physics2D.Raycast(offset.position, light.transform.position, 10000, layerMask);
+                RaycastHit2D hit = Physics2D.Raycast(offset.position, light.transform.position - offset.position, distance, layerMask);
 
                 if (hit.collider) continue;
 
@@ -59,7 +60,7 @@ public class LightDetector : MonoBehaviour
             }
         }
 
-        //Debug.Log($"Red: {hitBy["Red"]}\nGreen: {hitBy["Green"]}\nBlue: {hitBy["Blue"]}");
+        Debug.Log($"Red: {hitBy["Red"]}\nGreen: {hitBy["Green"]}\nBlue: {hitBy["Blue"]}");
     }
 
     public float FalloffThreshold(float inner, float outer, float falloffIntensity)
