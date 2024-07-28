@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 363.78998, y: 232}
-  m_SizeDelta: {x: 273.43, y: -50}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1963506451726895896
 CanvasRenderer:
@@ -192,7 +192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogController: {fileID: 2116968986208208237}
-  hintController: {fileID: 93863040975085082}
+  hintController: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &2431741562404995445
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +205,6 @@ GameObject:
   - component: {fileID: 5155816954207562474}
   - component: {fileID: 6439678475324184707}
   - component: {fileID: 8894462608817746467}
-  - component: {fileID: 93863040975085082}
   m_Layer: 5
   m_Name: HintText
   m_TagString: Untagged
@@ -226,10 +226,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 142801085906098890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 313.78998, y: 182}
-  m_SizeDelta: {x: 373.43, y: 50}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6439678475324184707
 CanvasRenderer:
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.6
+  m_fontSize: 43.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -328,19 +328,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &93863040975085082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2431741562404995445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c2c9aba07f289c4e950d2a7c2b71f3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hintTextGO: {fileID: 0}
 --- !u!1 &4602923640864697223
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 142801085906098890}
+  - component: {fileID: 8257134381790798239}
   m_Layer: 5
   m_Name: Hint
   m_TagString: Untagged
@@ -373,11 +361,24 @@ RectTransform:
   - {fileID: 5155816954207562474}
   m_Father: {fileID: 4752730840647562291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -195.88977, y: -29.864716}
+  m_SizeDelta: {x: 391.7795, y: 59.7294}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8257134381790798239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4602923640864697223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2c9aba07f289c4e950d2a7c2b71f3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintTextGo: {fileID: 8894462608817746467}
 --- !u!1 &5531048807608264394
 GameObject:
   m_ObjectHideFlags: 0
