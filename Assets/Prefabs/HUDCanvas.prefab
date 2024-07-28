@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogController: {fileID: 2116968986208208237}
-  hintController: {fileID: 0}
+  hintController: {fileID: 8257134381790798239}
   player: {fileID: 0}
 --- !u!1 &2431741562404995445
 GameObject:
