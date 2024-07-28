@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
             Debug.Log("Player Frozen: " + value);
         }
     }
+    
+    [SerializeField] private CapsuleCollider2D horizontalCollider;
+    [SerializeField] private CapsuleCollider2D verticalCollider;
 
     private bool _freezePlayer = false;
     // GET YO BELL TACO (Player Controls) from here. Don't instantiate your own.
@@ -104,6 +107,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate() 
     {
         Move();
+        UpdateOrientation();
     }
 
     private void PlayerInput()
@@ -118,6 +122,20 @@ public class Player : MonoBehaviour
             _anim.SetFloat(X, _movement.x);
             _anim.SetFloat(Y, _movement.y);
         }
+    }
+
+    private void UpdateOrientation()
+    {
+        float horizontalOrientation = Mathf.Abs(_anim.GetFloat(X)) ;
+        float verticalOrientation = Mathf.Abs(_anim.GetFloat(Y));
+        if (horizontalOrientation > verticalOrientation) {
+            horizontalCollider.enabled = true;
+            verticalCollider.enabled = false;
+        } else {
+            horizontalCollider.enabled = false;
+            verticalCollider.enabled = true;
+        }
+        
     }
 
     private void Move()
