@@ -8,7 +8,7 @@ public class Portal : Interactable
 {
     [SerializeField]
     private List<Lantern> lanterns;
-    public float rotationSpeed = 2.0f;
+    //public float rotationSpeed = 2.0f;
 
     void Update()
     {
@@ -21,8 +21,8 @@ public class Portal : Interactable
         interactable = !active;
     }
 
-    void FixedUpdate()
-    {
-        transform.Rotate(Vector3.forward * rotationSpeed);
-    }
+    // void FixedUpdate()
+    // {
+    //     transform.Rotate(Vector3.forward * rotationSpeed);
+    // }
 }

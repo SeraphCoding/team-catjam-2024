@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 630210322}
   - component: {fileID: 630210321}
   - component: {fileID: 630210323}
+  - component: {fileID: 630210325}
   - component: {fileID: 630210324}
   m_Layer: 0
   m_Name: Portal
@@ -555,7 +556,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5ea76ea9d5280463aa4c9d88927154c9, type: 3}
+  m_Sprite: {fileID: 51621002, guid: 556d1b65a0c3dda0c9dccd5ca03b57f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -575,7 +576,7 @@ Transform:
   m_GameObject: {fileID: 630210320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.003, y: 1.533, z: -0.013124008}
+  m_LocalPosition: {x: 1.003, y: 1.533, z: -0.0131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -601,9 +602,30 @@ MonoBehaviour:
   - {fileID: 250666688}
   - {fileID: 990482729}
   - {fileID: 1861484657}
-  rotationSpeed: 0.15
---- !u!61 &630210324
-BoxCollider2D:
+  rotationSpeed: 0
+--- !u!95 &630210324
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630210320}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddaec3627c1c90bc6a6e394f960c6be9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &630210325
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -635,18 +657,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
+  m_Radius: 0.6484375
 --- !u!1 &737372244
 GameObject:
   m_ObjectHideFlags: 0
