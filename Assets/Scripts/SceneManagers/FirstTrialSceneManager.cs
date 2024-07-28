@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SceneManagers
 {
-    public class TutorialSceneManager : MonoBehaviour
+    public class FirstTrialSceneManager : MonoBehaviour
     {
         public HUDController hud;
         // Start is called before the first frame update
