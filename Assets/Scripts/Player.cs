@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,13 +5,31 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float interactionRadius = 2f;
-    public bool freezePlayer = false;
-    
-    private PlayerControls _playerControls;
+
+    public bool FreezePlayer
+    {
+        get => _freezePlayer;
+        set
+        {
+            _freezePlayer = value;
+            if (value) StopAnimation();
+            else StartAnimation();
+            Debug.Log("Player Frozen: " + value);
+        }
+    }
+
+    private bool _freezePlayer = false;
+    // GET YO BELL TACO (Player Controls) from here. Don't instantiate your own.
+    public static PlayerControls _playerControls;
     private Vector2 _movement;
     private Rigidbody2D _body;
     private Animator _anim;
     private Interactable _interactable;
+    /// <summary>
+    /// When the player is interacting with an interactable that can be rotated, it will freeze the player and transfer
+    /// the AD input to the interactable to decide for a rotation direction.
+    /// </summary>
+    private bool _isRotatingInteractable;
     private static readonly int X = Animator.StringToHash("X");
     private static readonly int Y = Animator.StringToHash("Y");
 
@@ -29,6 +46,7 @@ public class Player : MonoBehaviour
         _body = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _playerControls.Interaction.Interact.started += Interact;
+        _playerControls.Interaction.Rotate.started += Rotate;
     }
 
     private void OnEnable()
@@ -39,14 +57,22 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Interactables();
-
-        if (freezePlayer) return;
         PlayerInput();
     }
 
     private void Interact(InputAction.CallbackContext _)
     {
         _interactable?.Interact();
+    }
+    
+    private void Rotate(InputAction.CallbackContext _)
+    {
+        Debug.Log("Rotate");
+        if (_interactable && _interactable.isRotatable)
+            _interactable?.Rotate();
+        FreezePlayer = _interactable?.IsBeingRotated ?? false;
+        Debug.Log("Player Interactible Rotation "+ _interactable?.IsBeingRotated);
+        Debug.Log("Player Frozen "+FreezePlayer);
     }
 
     private void Interactables()
@@ -57,7 +83,7 @@ public class Player : MonoBehaviour
         foreach (Collider2D overlappingCollider in Physics2D.OverlapCircleAll(transform.position, interactionRadius)) {
             Interactable i = overlappingCollider.GetComponent<Interactable>();
 
-            if (!i || !i.IsInteractable) continue;
+            if (!i || (!i.IsInteractable && !i.isRotatable)) continue;
 
             float dist = (i.transform.position - transform.position).sqrMagnitude;
             if (dist < closestDist) {
@@ -82,6 +108,7 @@ public class Player : MonoBehaviour
 
     private void PlayerInput()
     {
+        if (FreezePlayer) return;
         _movement = _playerControls.Movement.Move.ReadValue<Vector2>();
 
         if (_movement.magnitude == 0) {
@@ -101,7 +128,8 @@ public class Player : MonoBehaviour
     private void StopAnimation()
     {
         _anim.speed = 0;
-        _anim.Play(0, 0, 0); // set animation to first frame
+        // If the animation is not set to the first frame, the cat will stand on just some of its legs when the player is frozen.
+        _anim.Play(0, 0, 0); // reset the animation
     }
 
     private void StartAnimation()

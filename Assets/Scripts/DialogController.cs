@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public delegate void DialogFinish();
+
 /// <summary>
 /// Attach this script to the Dialog GameObject that holds the avatar and text.
 /// </summary>
@@ -34,7 +36,6 @@ public class DialogController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         gameObject.SetActive(showDialog);
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
             _currentIndex++;
@@ -49,5 +50,10 @@ public class DialogController : MonoBehaviour
             avatarGameObject.sprite = avatars[_currentIndex];
         }
 
+    }
+
+    public void OnDialogFinish()
+    {
+        
     }
 }
