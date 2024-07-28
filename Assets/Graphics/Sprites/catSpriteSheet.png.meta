@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catLeft0
+      name: catLeft3
       rect:
         serializedVersion: 2
         x: 0
@@ -448,7 +448,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catLeft1
+      name: catLeft0
       rect:
         serializedVersion: 2
         x: 32
@@ -469,7 +469,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catLeft2
+      name: catLeft1
       rect:
         serializedVersion: 2
         x: 64
@@ -490,7 +490,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catLeft3
+      name: catLeft2
       rect:
         serializedVersion: 2
         x: 96
@@ -525,10 +525,10 @@ TextureImporter:
       catDown1: 252676791
       catDown2: 873995365
       catDown3: -199488976
-      catLeft0: 1245157423
-      catLeft1: 2131170220
-      catLeft2: -2141926905
-      catLeft3: 1809657509
+      catLeft0: 2131170220
+      catLeft1: -2141926905
+      catLeft2: 1809657509
+      catLeft3: 1245157423
       catRight0: 172720646
       catRight1: 943713843
       catRight2: -158731733
