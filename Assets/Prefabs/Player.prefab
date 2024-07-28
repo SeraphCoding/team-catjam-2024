@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  interactionRadius: 2
+  interactionRadius: 0.5
   freezePlayer: 0
 --- !u!95 &8971028424985013011
 Animator:
