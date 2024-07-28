@@ -1178,13 +1178,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432520504}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3908, y: 1.908, z: -1}
+  m_LocalRotation: {x: -0, y: 0.0065871556, z: -0, w: 0.9999783}
+  m_LocalPosition: {x: -0.468, y: 1.615, z: -1}
   m_LocalScale: {x: 1.7230712, y: 0.4039, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.755, z: 0}
 --- !u!1001 &1670123946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1204,6 +1204,72 @@ PrefabInstance:
     - target: {fileID: 1869188731465737876, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
       propertyPath: m_Name
       value: HUDCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: avatars.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[0]
+      value: Oh, you made it! (That took me 30 minutes, when I did the trials. Damn.)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[1]
+      value: Well, well. So you learned what it means to see more, when you see less.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[2]
+      value: (Still don't know what that means.)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[3]
+      value: Did you know that Shadow Cats hate the light? Turns out, impenetrable
+        objects hate light too.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[4]
+      value: Oh shoot, too much information. For this trial, you must find a way
+        to get through the impenetrable wall of doom!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[5]
+      value: Good luck!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[6]
+      value: Complete our trials and you shall learn.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[7]
+      value: Listen carefully... this is your hint for the first trial.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[8]
+      value: (That makes no sense...)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[9]
+      value: Good luck!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[10]
+      value: Good luck!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[11]
+      value: Good luck!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[12]
+      value: Good luck!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116968986208208237, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
+      propertyPath: dialog.Array.data[13]
+      value: Good luck!
       objectReference: {fileID: 0}
     - target: {fileID: 2392066707728582731, guid: e1d9035a54864d14faf45a984c01df1f, type: 3}
       propertyPath: m_Camera
