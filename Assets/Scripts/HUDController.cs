@@ -32,6 +32,7 @@ public class HUDController : MonoBehaviour
     {
         player.FreezePlayer = true;
         dialogController.gameObject.SetActive(true);
+        dialogController.showDialog = true;
     }
     
     public void HideDialog()

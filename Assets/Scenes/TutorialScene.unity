@@ -242,6 +242,10 @@ PrefabInstance:
       propertyPath: action
       value: Turn Off
       objectReference: {fileID: 0}
+    - target: {fileID: 2956007028326203407, guid: a3c7f2f8ad67fe34d8c51e0c78bf578e, type: 3}
+      propertyPath: interactAction
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7507874748716902444, guid: a3c7f2f8ad67fe34d8c51e0c78bf578e, type: 3}
       propertyPath: m_Name
       value: Lantern
@@ -596,13 +600,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 630210321}
-  action: Use Portal
+  rotationSpeed: 0
+  isRotatable: 0
+  interactAction: Use Portal
+  rotateAction: Rotate
   lanterns:
   - {fileID: 2116934486}
   - {fileID: 250666688}
   - {fileID: 990482729}
   - {fileID: 1861484657}
-  rotationSpeed: 0
 --- !u!95 &630210324
 Animator:
   serializedVersion: 5

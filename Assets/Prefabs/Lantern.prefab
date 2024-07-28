@@ -227,10 +227,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 3556756343071447299}
-  Transform: {fileID: 414044971967815171}
   rotationSpeed: 1
   isRotatable: 0
-  interactAction: 
+  interactAction: Turn Off
   rotateAction: Rotate
   lanternLight2D: {fileID: 5459410465118370642}
   unlitSprite: {fileID: 21300000, guid: 0908bd7ad36cbf254992d8c1f02b10dd, type: 3}

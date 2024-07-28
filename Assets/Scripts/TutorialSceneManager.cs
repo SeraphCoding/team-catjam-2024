@@ -8,7 +8,6 @@ public class TutorialSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hud.dialogController.showDialog = true;
-        hud.dialogController.gameObject.SetActive(true);
+        hud.ShowDialog();
     }
 }
