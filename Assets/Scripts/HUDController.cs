@@ -6,6 +6,11 @@ public class HUDController : MonoBehaviour
     public HintController hintController;
     public Player player;
 
+    void Awake()
+    {
+        dialogController.OnDialogFinished += HideDialog;
+    }
+
     private void Update()
     {
         if (!player) return;
