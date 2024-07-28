@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -15,11 +16,22 @@ public class Interactable : MonoBehaviour
     // Action that will be performed on interaction, to display in the HUD as a hint.
     [SerializeField] public string interactAction;
     public string rotateAction = "Rotate";
+    // The transform of the interactable can sometimes be different from the game object transform.
+    protected Transform TargetTransform = null;
     private bool _isBeingRotated = false;
     private static readonly int OutlineThickness = Shader.PropertyToID("_OutlineThickness");
     public bool IsInteractable => interactable;
     public bool IsBeingRotated => _isBeingRotated;
-    
+
+    private void Awake()
+    {
+        OnSetTransform();
+    }
+
+    protected virtual void OnSetTransform()
+    {
+        TargetTransform = transform;
+    }
 
     public virtual void Interact()
     {
@@ -42,7 +54,7 @@ public class Interactable : MonoBehaviour
     {
         if (!_isBeingRotated) return;
         Vector2 _movement = Player._playerControls.Movement.Move.ReadValue<Vector2>();
-        transform.Rotate(_movement.x * Time.fixedDeltaTime * rotationSpeed, 0, 0);
+        TargetTransform.Rotate(0, 0, _movement.x * Time.fixedDeltaTime * rotationSpeed);
     }
 
     private void FixedUpdate()

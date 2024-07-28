@@ -38,12 +38,11 @@ public class DialogController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         gameObject.SetActive(showDialog);
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
             _currentIndex++;
         }
-        if (_currentIndex >= dialog.Count || dialog.Count== 0) {
+        if (showDialog && (_currentIndex >= dialog.Count || dialog.Count== 0)) {
             showDialog = false;
             _currentIndex = 0;
             OnDialogFinished?.Invoke();
