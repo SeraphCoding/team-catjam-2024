@@ -38,7 +38,7 @@ public class LightDetector : MonoBehaviour
 
             foreach (Transform offset in offsets) {
                 float distance = (light.transform.position - transform.position).magnitude;
-                Debug.Log($"{Mathf.Pow(FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity), 2)},{(light.transform.position - transform.position).sqrMagnitude}");
+                //Debug.Log($"{Mathf.Pow(FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity), 2)},{(light.transform.position - transform.position).sqrMagnitude}");
                 if (FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity)
                     < distance)
                     continue;
@@ -47,7 +47,7 @@ public class LightDetector : MonoBehaviour
 
                 if (hit.collider) continue;
 
-                Debug.Log($"{FalloffThreshold(light.pointLightInnerAngle, light.pointLightOuterAngle, light.falloffIntensity) / 2},{Vector3.Angle(light.transform.up, transform.position - light.transform.position)}");
+                //Debug.Log($"{FalloffThreshold(light.pointLightInnerAngle, light.pointLightOuterAngle, light.falloffIntensity) / 2},{Vector3.Angle(light.transform.up, transform.position - light.transform.position)}");
 
                 if (FalloffThreshold(light.pointLightInnerAngle, light.pointLightOuterAngle, light.falloffIntensity) / 2
                     < Vector3.Angle(light.transform.up, transform.position - light.transform.position))
@@ -58,7 +58,7 @@ public class LightDetector : MonoBehaviour
             }
         }
 
-        Debug.Log($"Red: {hitBy["Red"]}\nGreen: {hitBy["Green"]}\nBlue: {hitBy["Blue"]}");
+        //Debug.Log($"Red: {hitBy["Red"]}\nGreen: {hitBy["Green"]}\nBlue: {hitBy["Blue"]}");
     }
 
     public float FalloffThreshold(float inner, float outer, float falloffIntensity)

@@ -25,6 +25,7 @@ public class RGBSprite : MonoBehaviour
             spriteRenderer.sortingLayerName = split[0];
             gameObject.transform.SetParent(transform);
             gameObject.transform.localScale = Vector3.one;
+            gameObject.transform.position = Vector3.zero;
         }
     }
 }

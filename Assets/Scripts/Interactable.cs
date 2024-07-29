@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 public class Interactable : MonoBehaviour
 {
     public SpriteRenderer renderer;
-    public float rotationSpeed = 1f;
+    public float rotationSpeed = 50f;
     protected bool interactable = true;
 
     /// <summary>

@@ -12,15 +12,17 @@ public class DisableInLight : LightDetector
     private bool green;
     [SerializeField]
     private bool blue;
+    [SerializeField]
+    private bool reverse;
 
     public override void FixedUpdate()
     {
         base.FixedUpdate();
 
         if ((!red || (red && hitBy["Red"])) && (!green || (green && hitBy["Green"])) && (!blue || (blue && hitBy["Blue"])))
-            SetAll(false);
+            SetAll(false ^ reverse);
         else
-            SetAll(true);
+            SetAll(true ^ reverse);
     }
 
     void SetAll(bool active)
