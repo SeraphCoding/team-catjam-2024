@@ -609,6 +609,7 @@ MonoBehaviour:
   - {fileID: 250666688}
   - {fileID: 990482729}
   - {fileID: 1861484657}
+  nextScene: {fileID: 102900000, guid: a8cce24fffc0d8a48a6160d22c312085, type: 3}
 --- !u!95 &630210324
 Animator:
   serializedVersion: 5

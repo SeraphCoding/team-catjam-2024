@@ -1,13 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Threading;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Portal : Interactable
 {
-    [SerializeField]
-    private List<Lantern> lanterns;
+    [SerializeField] private List<Lantern> lanterns;
+    [SerializeField] private SceneAsset nextScene;
     //public float rotationSpeed = 2.0f;
 
     void Update()
@@ -21,8 +20,9 @@ public class Portal : Interactable
         interactable = !active;
     }
 
-    // void FixedUpdate()
-    // {
-    //     transform.Rotate(Vector3.forward * rotationSpeed);
-    // }
+    public override void Interact()
+    {
+         base.Interact();
+         SceneManager.LoadScene(nextScene.name, LoadSceneMode.Single);
+    }
 }
