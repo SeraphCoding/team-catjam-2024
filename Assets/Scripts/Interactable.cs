@@ -40,11 +40,11 @@ public class Interactable : MonoBehaviour
 
     public virtual void Rotate()
     {
-        Debug.Log("Interactable Rotate");
+        //Debug.Log("Interactable Rotate");
         if (!isRotatable) return;
-        Debug.Log("Interactable Toggled Rotation State");
+        //Debug.Log("Interactable Toggled Rotation State");
         _isBeingRotated = !_isBeingRotated;
-        Debug.Log(_isBeingRotated);
+        //Debug.Log(_isBeingRotated);
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class Interactable : MonoBehaviour
     {
         if (!_isBeingRotated) return;
         Vector2 _movement = Player._playerControls.Movement.Move.ReadValue<Vector2>();
-        TargetTransform.Rotate(0, 0, _movement.x * Time.fixedDeltaTime * rotationSpeed);
+        TargetTransform.Rotate(0, 0, -_movement.x * Time.fixedDeltaTime * rotationSpeed);
     }
 
     private void FixedUpdate()
