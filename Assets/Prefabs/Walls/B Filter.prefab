@@ -22,15 +22,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6117620092961548786, guid: d9762a2e987317120a0a403ef045d92a, type: 3}
       propertyPath: m_InstanceId
-      value: -42104
+      value: -140612
       objectReference: {fileID: 0}
     - target: {fileID: 6117620092961548786, guid: d9762a2e987317120a0a403ef045d92a, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6117620092961548786, guid: d9762a2e987317120a0a403ef045d92a, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[0]
       value: 1330207213
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117620092961548786, guid: d9762a2e987317120a0a403ef045d92a, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: -2094970195
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117620092961548786, guid: d9762a2e987317120a0a403ef045d92a, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: -773584533
       objectReference: {fileID: 0}
     - target: {fileID: 6741641194671136008, guid: d9762a2e987317120a0a403ef045d92a, type: 3}
       propertyPath: m_LocalPosition.x
