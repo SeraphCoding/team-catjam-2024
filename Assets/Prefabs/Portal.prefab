@@ -110,7 +110,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  nextScene: {fileID: 102900000, guid: a8cce24fffc0d8a48a6160d22c312085, type: 3}
+  nextScene: {fileID: 0}
 --- !u!58 &8580262835653027835
 CircleCollider2D:
   m_ObjectHideFlags: 0
