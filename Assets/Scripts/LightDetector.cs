@@ -11,19 +11,16 @@ public class LightDetector : MonoBehaviour
 {
     [SerializeField]
     private Transform[] offsets;
-    private Transform lights;
     public readonly Dictionary<string, bool> hitBy = new() { { "Red", false }, { "Green", false }, { "Blue", false } };
 
     public void Awake()
     {
-        lights = GameObject.Find("DetectableLights").transform;
-
         if (offsets.Count() > 0) return;
 
         offsets = new Transform[] { transform }; 
     }
 
-    public void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         ScanLights();
     }
@@ -32,11 +29,10 @@ public class LightDetector : MonoBehaviour
     {
         hitBy["Red"] = hitBy["Green"] = hitBy["Blue"] = false;
         
-        foreach (Transform l in lights) {
-            Light2D light = l.GetComponent<Light2D>();
+        foreach (Light2D light in DetectableLights.instance.lights) {
             foreach (Transform offset in offsets) {
                 float distance = (light.transform.position - transform.position).magnitude;
-                //Debug.Log($"{Mathf.Pow(FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity), 2)},{(light.transform.position - transform.position).sqrMagnitude}");
+                Debug.Log($"{Mathf.Pow(FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity), 2)},{(light.transform.position - transform.position).sqrMagnitude}");
                 if (FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity)
                     < distance)
                     continue;
@@ -49,7 +45,7 @@ public class LightDetector : MonoBehaviour
 
                 if (hit.collider) continue;
 
-                //Debug.Log($"{FalloffThreshold(light.pointLightInnerAngle, light.pointLightOuterAngle, light.falloffIntensity) / 2},{Vector3.Angle(light.transform.up, transform.position - light.transform.position)}");
+                Debug.Log($"{FalloffThreshold(light.pointLightInnerAngle, light.pointLightOuterAngle, light.falloffIntensity) / 2},{Vector3.Angle(light.transform.up, transform.position - light.transform.position)}");
 
                 if (FalloffThreshold(light.pointLightInnerAngle, light.pointLightOuterAngle, light.falloffIntensity) / 2
                     < Vector3.Angle(light.transform.up, transform.position - light.transform.position))
@@ -60,7 +56,7 @@ public class LightDetector : MonoBehaviour
             }
         }
 
-        //Debug.Log($"Red: {hitBy["Red"]}\nGreen: {hitBy["Green"]}\nBlue: {hitBy["Blue"]}");
+        Debug.Log($"Red: {hitBy["Red"]}\nGreen: {hitBy["Green"]}\nBlue: {hitBy["Blue"]}");
     }
 
     public float FalloffThreshold(float inner, float outer, float falloffIntensity)
