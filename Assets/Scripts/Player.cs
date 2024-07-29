@@ -12,9 +12,14 @@ public class Player : MonoBehaviour
         set
         {
             _freezePlayer = value;
-            if (value) StopAnimation();
-            else StartAnimation();
-            Debug.Log("Player Frozen: " + value);
+            if (value) {
+                StopAnimation();
+                _movement = Vector2.zero;
+            }
+            else {
+                StartAnimation();
+            }
+            //Debug.Log("Player Frozen: " + value);
         }
     }
     
