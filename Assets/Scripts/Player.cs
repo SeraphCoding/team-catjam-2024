@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        if (_playerControls != null) _playerControls.Dispose();
         _playerControls = new PlayerControls();
         _body = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
