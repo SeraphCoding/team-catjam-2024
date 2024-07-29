@@ -38,8 +38,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: RedFloor
+    uniqueID: 2199997101
+    locked: 0
+  - name: GreenFloor
+    uniqueID: 3521382763
+    locked: 0
+  - name: BlueFloor
+    uniqueID: 1946704473
     locked: 0
   - name: Red
     uniqueID: 1330207213
@@ -49,6 +55,9 @@ TagManager:
     locked: 0
   - name: Blue
     uniqueID: 3760930045
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: UI
     uniqueID: 3998407013
