@@ -8,6 +8,7 @@ namespace SceneManagers
         // Start is called before the first frame update
         void Start()
         {
+            SaveSystemSingleton.Instance.UpdateCurrentScene("TutorialScene");
             hud.ShowDialog();
         }
     }

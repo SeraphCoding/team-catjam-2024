@@ -33,6 +33,11 @@ namespace SceneManagers
             SaveSystemSingleton.Instance.ResetGame();
             SceneManager.LoadScene(tutorialScene.name, LoadSceneMode.Single);
         }
+        
+        public void LoadGame()
+        {
+            SceneManager.LoadScene(SaveSystemSingleton.Instance.CurrentSceneName, LoadSceneMode.Single);
+        }
 
 
     }

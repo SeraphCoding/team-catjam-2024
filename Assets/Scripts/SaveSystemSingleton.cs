@@ -9,9 +9,14 @@ public class SaveSystemSingleton : MonoBehaviour
     private struct PlayerSaveData
     {
         public bool hasGame;
+        /// <summary>
+        /// The scene that the player has YET AKA CURRENTLY left to pass
+        /// </summary>
+        public string currentSceneName;
     }
 
     [SerializeField] private PlayerSaveData playerSaveData;
+    public string CurrentSceneName => playerSaveData.currentSceneName;
 
     private void Awake()
     {
@@ -41,8 +46,15 @@ public class SaveSystemSingleton : MonoBehaviour
     {
         playerSaveData = new PlayerSaveData
         {
-            hasGame = true
+            hasGame = true,
+            currentSceneName = "TutorialScene"
         };
+        ES3.Save("playerSaveData", playerSaveData);
+    }
+
+    public void UpdateCurrentScene(string newScene)
+    {
+        playerSaveData.currentSceneName = newScene;
         ES3.Save("playerSaveData", playerSaveData);
     }
 }
