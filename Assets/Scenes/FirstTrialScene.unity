@@ -176,6 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 234047371}
+  - component: {fileID: 234047372}
   m_Layer: 0
   m_Name: DetectableLights
   m_TagString: Untagged
@@ -198,6 +199,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &234047372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234047370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2205e0d91f73fa5dfa9b6114504200ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lights:
+  - {fileID: 5459410464953114060}
 --- !u!1001 &356205162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1437,6 +1452,10 @@ PrefabInstance:
       propertyPath: m_ApplyToSortingLayers.Array.data[3]
       value: 1946704473
       objectReference: {fileID: 0}
+    - target: {fileID: 6914499088739691570, guid: a3c7f2f8ad67fe34d8c51e0c78bf578e, type: 3}
+      propertyPath: m_Name
+      value: Blue
+      objectReference: {fileID: 0}
     - target: {fileID: 7507874748716902444, guid: a3c7f2f8ad67fe34d8c51e0c78bf578e, type: 3}
       propertyPath: m_Name
       value: Lantern
@@ -1526,7 +1545,7 @@ Transform:
   m_GameObject: {fileID: 1432520504}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0065871556, z: -0, w: 0.9999783}
-  m_LocalPosition: {x: -0.547, y: 1.643, z: 1}
+  m_LocalPosition: {x: -0.547, y: 1.643, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1957,6 +1976,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8211146782419728674, guid: 19cb4bfaabbd2059b9d0c9ec2ddfe391, type: 3}
   m_PrefabInstance: {fileID: 1855513362}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5459410464953114060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5459410465118370642, guid: a3c7f2f8ad67fe34d8c51e0c78bf578e, type: 3}
+  m_PrefabInstance: {fileID: 1368934161}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
