@@ -12,8 +12,10 @@ public class Portal : Interactable
     {
         bool active = false;
 
-        foreach (Lantern lantern in lanterns) {
-            active = active || lantern.IsInteractable;
+        if (lanterns != null) {
+            foreach (Lantern lantern in lanterns) {
+                active = active || lantern.IsInteractable;
+            }
         }
 
         interactable = !active;
