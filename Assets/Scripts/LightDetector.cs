@@ -30,16 +30,18 @@ public class LightDetector : MonoBehaviour
         hitBy["Red"] = hitBy["Green"] = hitBy["Blue"] = false;
         
         foreach (Light2D light in DetectableLights.instance.lights) {
+            if (!light.isActiveAndEnabled) continue;
+
+            int layerMask = 1 << 10;
+            if (light.name == "Green") layerMask <<= 1;
+            if (light.name == "Blue") layerMask <<= 2;
+
             foreach (Transform offset in offsets) {
                 float distance = (light.transform.position - transform.position).magnitude;
                 Debug.Log($"{Mathf.Pow(FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity), 2)},{(light.transform.position - transform.position).sqrMagnitude}");
                 if (FalloffThreshold(light.pointLightInnerRadius,light.pointLightOuterRadius, light.falloffIntensity)
                     < distance)
                     continue;
-
-                int layerMask = 1 << 10;
-                if (light.name == "Green") layerMask <<= 1;
-                if (light.name == "Blue") layerMask <<= 2;
 
                 RaycastHit2D hit = Physics2D.Raycast(offset.position, light.transform.position - offset.position, distance, layerMask);
 
