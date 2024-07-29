@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Button = UnityEngine.UI.Button;
@@ -9,7 +8,7 @@ namespace SceneManagers
     {
         [SerializeField] private Button loadGameButton;
 
-        [SerializeField] private SceneAsset tutorialScene;
+        [SerializeField] private string tutorialScene;
         // Start is called before the first frame update
         void Start()
         {
@@ -31,7 +30,7 @@ namespace SceneManagers
         public void CreateNewGame()
         {
             SaveSystemSingleton.Instance.ResetGame();
-            SceneManager.LoadScene(tutorialScene.name, LoadSceneMode.Single);
+            SceneManager.LoadScene(tutorialScene, LoadSceneMode.Single);
         }
         
         public void LoadGame()

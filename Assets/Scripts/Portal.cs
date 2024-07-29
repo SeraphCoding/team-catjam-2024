@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Portal : Interactable
 {
     [SerializeField] private List<Lantern> lanterns;
-    [SerializeField] private SceneAsset nextScene;
+    [SerializeField] private string nextScene;
     //public float rotationSpeed = 2.0f;
 
     void Update()
@@ -22,7 +21,7 @@ public class Portal : Interactable
 
     public override void Interact()
     {
-         base.Interact();
-         SceneManager.LoadScene(nextScene.name, LoadSceneMode.Single);
+        base.Interact();
+        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
 }

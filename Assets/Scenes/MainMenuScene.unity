@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadGameButton: {fileID: 1719046297}
-  tutorialScene: {fileID: 102900000, guid: 7695ed80add060e469331593e79b9080, type: 3}
+  tutorialScene: TutorialScene
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
