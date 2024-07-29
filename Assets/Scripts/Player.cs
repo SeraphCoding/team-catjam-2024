@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         float closestDist = float.PositiveInfinity;
         Interactable closest = null;
         // Might cause performance issues if there are many interactables in the specified radius.
-        foreach (Collider2D overlappingCollider in Physics2D.OverlapCircleAll(transform.position, interactionRadius)) {
+        foreach (Collider2D overlappingCollider in Physics2D.OverlapCircleAll(transform.position, interactionRadius, 1 << 8)) {
             Interactable i = overlappingCollider.GetComponent<Interactable>();
 
             if (!i || (!i.IsInteractable && !i.isRotatable)) continue;

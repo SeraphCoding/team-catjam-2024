@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 630210323}
   - component: {fileID: 630210325}
   - component: {fileID: 630210324}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
