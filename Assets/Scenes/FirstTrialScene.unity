@@ -148,10 +148,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 56249054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8fca719b2c585a449d26e6973955d6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 21a3c643f6cd04fac9dbd1cbc15497a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hud: {fileID: 629104144}
+  dialog: 1
+  sceneName: FirstTrialScene
 --- !u!4 &56249056
 Transform:
   m_ObjectHideFlags: 0
