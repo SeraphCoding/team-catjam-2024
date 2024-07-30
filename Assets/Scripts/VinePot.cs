@@ -24,7 +24,7 @@ public class VinePot : LightDetector
     {
         base.FixedUpdate();
         timeSinceGrow += Time.fixedDeltaTime;
-        if (!hitBy["Red"] && hitBy["Green"] && !hitBy["Blue"] && timeSinceGrow > growDelay) Grow();
+        if (hitBy["Green"] && timeSinceGrow > growDelay) Grow();
     }
 
     public void Grow()
