@@ -7,6 +7,7 @@ public class Interactable : MonoBehaviour
 {
     public SpriteRenderer renderer;
     public float rotationSpeed = 50f;
+    [SerializeField]
     protected bool interactable = true;
 
     /// <summary>
