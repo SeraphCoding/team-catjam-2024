@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FourthTrialScene.unity
     guid: f262a54ccb436eb409a30dd848a56800
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 491658ecc8768d54c8f200cb7d1d87c5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0502d156d1220724c97519fbc4c37fb1, type: 2}

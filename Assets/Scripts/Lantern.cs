@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -10,7 +11,7 @@ public class Lantern : Interactable
     // Setting the lit sprite specifically because doing so in awake will cause the default sprite to be the unlit one.
     public Sprite litSprite;
     public bool isTheFinalLantern = false;
-
+    
     protected override void OnSetTransform()
     {
         TargetTransform = lanternLight2D.transform;
