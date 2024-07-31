@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
         foreach (Collider2D overlappingCollider in Physics2D.OverlapCircleAll(transform.position, interactionRadius, 1 << 8)) {
             Interactable i = overlappingCollider.GetComponent<Interactable>();
 
-            if (!i || (!i.IsInteractable && !i.isRotatable)) continue;
+            if (!i || (!i.IsInteractable && !i.isRotatable && !i.CanBeMadeInteractable)) continue;
 
             float dist = (i.transform.position - transform.position).sqrMagnitude;
             if (dist < closestDist) {

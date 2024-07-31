@@ -1,9 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class DisableInLight : LightDetector
+public class DisableUnpoweredLantern : LightDetector
 {
-    [SerializeField]
-    private Behaviour[] toDisable;
+    /// <summary>
+    /// The lantern that this script should render unpowered when its not being hit by the specified light.
+    /// </summary>
+    [SerializeField] private Lantern lantern;
     [SerializeField]
     private bool red;
     [SerializeField]
@@ -18,15 +22,8 @@ public class DisableInLight : LightDetector
         base.FixedUpdate();
 
         if ((!red || (red && hitBy["Red"])) && (!green || (green && hitBy["Green"])) && (!blue || (blue && hitBy["Blue"])))
-            SetAll(false ^ reverse);
+            lantern.ToggleLanternPower(false ^ reverse);
         else
-            SetAll(true ^ reverse);
-    }
-
-    void SetAll(bool active)
-    {
-        foreach (Behaviour b in toDisable) {
-            b.enabled = active;
-        }
+            lantern.ToggleLanternPower(true ^ reverse);
     }
 }

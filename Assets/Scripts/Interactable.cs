@@ -10,6 +10,8 @@ public class Interactable : MonoBehaviour
     [SerializeField]
     protected bool interactable = true;
 
+    [SerializeField]
+    protected bool canBeMadeInteractable = false;
     /// <summary>
     /// Allows the interactable to be rotated by the player.
     /// </summary>
@@ -17,12 +19,15 @@ public class Interactable : MonoBehaviour
     // Action that will be performed on interaction, to display in the HUD as a hint.
     [SerializeField] public string interactAction;
     public string rotateAction = "Rotate";
+
+    public string noAction = null;
     // The transform of the interactable can sometimes be different from the game object transform.
     protected Transform TargetTransform = null;
     private bool _isBeingRotated = false;
     private static readonly int OutlineThickness = Shader.PropertyToID("_OutlineThickness");
     public bool IsInteractable => interactable;
     public bool IsBeingRotated => _isBeingRotated;
+    public bool CanBeMadeInteractable => canBeMadeInteractable;
 
     private void Awake()
     {

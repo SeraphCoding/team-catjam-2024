@@ -19,11 +19,26 @@ public class Lantern : Interactable
     public override void Interact()
     {
         base.Interact();
-        if (!lanternLight2D.gameObject.activeSelf && !canBeTurnedBackOn) return;
+        if ((!lanternLight2D.gameObject.activeSelf && !canBeTurnedBackOn) || !interactable) return;
         lanternLight2D.gameObject.SetActive(!lanternLight2D.gameObject.activeSelf);
         GetComponent<SpriteRenderer>().sprite = lanternLight2D.gameObject.activeSelf ? unlitSprite : litSprite;
         
         if (canBeTurnedBackOn) return;
         interactable = false;
+    }
+
+    // Enables rotation and interaction when powered or disables them when unpowered.
+    public void ToggleLanternPower(bool powered)
+    {
+        isRotatable = powered;
+        interactable = powered;
+        noAction = powered ? null : "No power!";
+        if (lanternLight2D.gameObject.activeSelf && !powered)
+        {
+            // Turn off the lantern if it isnt powered but currently on, but does not turn it on just because it was powered.
+            lanternLight2D.gameObject.SetActive(false);
+        } 
+        
+        GetComponent<SpriteRenderer>().sprite = powered ? litSprite : unlitSprite;
     }
 }

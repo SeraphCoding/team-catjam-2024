@@ -24,7 +24,15 @@ public class HUDController : MonoBehaviour
         }
         else
         {
-            hintController.gameObject.SetActive(false);
+            if (player.Interactable && player.Interactable.noAction != null)
+            {
+                hintController.gameObject.SetActive(true);
+                hintController.SetText(player.Interactable.noAction);
+            }
+            else
+            {
+                hintController.gameObject.SetActive(false);
+            }
         }
     }
 
