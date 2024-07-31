@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2956007028326203407, guid: a3c7f2f8ad67fe34d8c51e0c78bf578e, type: 3}
       propertyPath: interactAction
-      value: 
+      value: Turn Off
       objectReference: {fileID: 0}
     - target: {fileID: 7507874748716902444, guid: a3c7f2f8ad67fe34d8c51e0c78bf578e, type: 3}
       propertyPath: m_Name
