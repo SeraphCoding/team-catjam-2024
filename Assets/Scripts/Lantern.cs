@@ -14,13 +14,15 @@ public class Lantern : Interactable
     {
         TargetTransform = lanternLight2D.transform;
     }
-
+    
+    
     public bool canBeTurnedBackOn;
     public override void Interact()
     {
         base.Interact();
         if ((!lanternLight2D.gameObject.activeSelf && !canBeTurnedBackOn) || !interactable) return;
         lanternLight2D.gameObject.SetActive(!lanternLight2D.gameObject.activeSelf);
+        if (!lanternLight2D.gameObject.activeSelf) AudioManager.PlayTurnOffLampFX(); 
         GetComponent<SpriteRenderer>().sprite = lanternLight2D.gameObject.activeSelf ? unlitSprite : litSprite;
         
         if (canBeTurnedBackOn) return;
@@ -40,5 +42,6 @@ public class Lantern : Interactable
         } 
         
         GetComponent<SpriteRenderer>().sprite = powered ? litSprite : unlitSprite;
+        if (powered) AudioManager.PlayPowerLampFX();
     }
 }

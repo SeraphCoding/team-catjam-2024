@@ -16,7 +16,7 @@ public class SaveSystemSingleton : MonoBehaviour
     }
 
     [Serializable]
-    private struct GameSettings
+    public struct GameSettings
     {
         public float musicVolume;
         public float sfxVolume;
@@ -76,5 +76,10 @@ public class SaveSystemSingleton : MonoBehaviour
         gameSettings.musicVolume = musicVolume;
         gameSettings.sfxVolume = sfxVolume;
         ES3.Save("gameSettings", gameSettings);
+    }
+    
+    public GameSettings GetGameSettings()
+    {
+        return gameSettings;
     }
 }

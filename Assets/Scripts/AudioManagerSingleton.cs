@@ -1,14 +1,19 @@
-using Unity.VisualScripting;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioSource bgmSource;
+    public AudioSource sfxSource;
     public AudioClip mainMenuBGM;
     public AudioClip gnomeWoo;
     public AudioClip catWalking;
     public AudioClip clickFX;
-    public AudioSource bgmSource;
-    public AudioSource sfxSource;
+    public List<AudioClip> turnOffLampFX;
+    public AudioClip portalTeleportFX;
+    public AudioClip powerLampFX;
     public static AudioManager Instance { get; private set; }
 
     private void Awake()
@@ -23,7 +28,15 @@ public class AudioManager : MonoBehaviour
             Instance = this;
         }
     }
-    
+
+    private void Start()
+    {
+        if (!SaveSystemSingleton.Instance) return;
+        SaveSystemSingleton.GameSettings gameSettings = SaveSystemSingleton.Instance.GetGameSettings();
+        bgmSource.volume = gameSettings.musicVolume;
+        sfxSource.volume = gameSettings.sfxVolume;
+    }
+
     public void SetBGMVolume(float volume)
     {
         bgmSource.volume = volume;
@@ -69,6 +82,23 @@ public class AudioManager : MonoBehaviour
             Instance.sfxSource.loop = true;
             Instance.sfxSource.Play();
         }
-            
+    }
+
+    public static void PlayPowerLampFX()
+    {
+        if (!Instance) return;
+        Instance.sfxSource.clip = null;
+        Instance.sfxSource.loop = false;
+        Instance.sfxSource.PlayOneShot(Instance.powerLampFX);
+    }
+
+    public static void PlayTurnOffLampFX()
+    {
+        
+        if (!Instance) return;
+        Instance.sfxSource.clip = null;
+        Instance.sfxSource.loop = false;
+        int randomIndex = Random.Range(0, Instance.turnOffLampFX.Count);
+        Instance.sfxSource.PlayOneShot(Instance.turnOffLampFX[randomIndex]);
     }
 }

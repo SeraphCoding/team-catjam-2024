@@ -1562,8 +1562,8 @@ MonoBehaviour:
     hasGame: 0
     currentSceneName: 
   gameSettings:
-    musicVolume: 0
-    sfxVolume: 0
+    musicVolume: 0.1
+    sfxVolume: 0.1
 --- !u!4 &1437468336
 Transform:
   m_ObjectHideFlags: 0
@@ -2859,6 +2859,26 @@ PrefabInstance:
       propertyPath: catWalking
       value: 
       objectReference: {fileID: 8300000, guid: a93e7f1a8e09ddc4387cba745d165af0, type: 3}
+    - target: {fileID: 3026765379044069528, guid: 17c1801f711cddf4aa6b74d09dae2a4f, type: 3}
+      propertyPath: powerLampFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 67c8d195e89f2e644879264458519b12, type: 3}
+    - target: {fileID: 3026765379044069528, guid: 17c1801f711cddf4aa6b74d09dae2a4f, type: 3}
+      propertyPath: portalTeleportFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c3687ae536835c42a74aba91176ead4, type: 3}
+    - target: {fileID: 3026765379044069528, guid: 17c1801f711cddf4aa6b74d09dae2a4f, type: 3}
+      propertyPath: turnOffLampFX.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026765379044069528, guid: 17c1801f711cddf4aa6b74d09dae2a4f, type: 3}
+      propertyPath: turnOffLampFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a81362c96fd86064c819b60d84711ae1, type: 3}
+    - target: {fileID: 3026765379044069528, guid: 17c1801f711cddf4aa6b74d09dae2a4f, type: 3}
+      propertyPath: turnOffLampFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f6513f2121710ef4bb85e3f4eabfc788, type: 3}
     - target: {fileID: 7554933479320962597, guid: 17c1801f711cddf4aa6b74d09dae2a4f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5288674

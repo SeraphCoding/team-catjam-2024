@@ -159,6 +159,7 @@ public class Player : MonoBehaviour
 
     private void StartAnimation()
     {
+        Debug.Log("Start Animation");
         AudioManager.CatWalk(true);
         _anim.speed = 1;
     }
