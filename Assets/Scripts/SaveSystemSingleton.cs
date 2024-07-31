@@ -47,15 +47,6 @@ public class SaveSystemSingleton : MonoBehaviour
         {
             gameSettings = ES3.Load("gameSettings", new GameSettings());
         }
-        else
-        {
-            gameSettings = new GameSettings
-            {
-                musicVolume = 0.1f,
-                sfxVolume = 0.1f
-            };
-            ES3.Save("gameSettings", gameSettings);
-        }
 
     }
     
