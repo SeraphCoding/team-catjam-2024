@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 659974956}
   - component: {fileID: 659974955}
   m_Layer: 5
-  m_Name: "Bj\xF6rn (2)"
+  m_Name: "Bj\xF6rn"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,10 +373,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2064925547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 201.27, y: 0}
-  m_SizeDelta: {x: -934.18, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -350.91, y: 0}
+  m_SizeDelta: {x: 224.82, y: 154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &659974955
 MonoBehaviour:
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 15, y: 0, z: 15, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 863078270}
   - component: {fileID: 863078269}
   m_Layer: 5
-  m_Name: "Bj\xF6rn (1)"
+  m_Name: Evelyn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -507,10 +507,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2064925547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -23.544998, y: 0}
-  m_SizeDelta: {x: -934.18, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 225.82, y: 154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863078269
 MonoBehaviour:
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 15, y: 0, z: 15, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 1714071135}
   - component: {fileID: 1714071134}
   m_Layer: 5
-  m_Name: "Bj\xF6rn"
+  m_Name: Jace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1054,10 +1054,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2064925547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -248.37, y: 0}
-  m_SizeDelta: {x: -934.18, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 337.66, y: 0}
+  m_SizeDelta: {x: 224.82, y: 154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714071134
 MonoBehaviour:
@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 6.96, y: 0, z: 8.01, w: 0}
+  m_margin: {x: 15, y: 0, z: 15, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1188,10 +1188,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2064925547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -357.73, y: 0}
-  m_SizeDelta: {x: -715.45, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -470.4, y: 0}
+  m_SizeDelta: {x: 219.24, y: 154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1863279235
 MonoBehaviour:
@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 239.54704, w: 0}
+  m_margin: {x: 15, y: 0, z: 15, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1302,7 +1302,7 @@ GameObject:
   - component: {fileID: 1896813679}
   - component: {fileID: 1896813678}
   m_Layer: 5
-  m_Name: "Bj\xF6rn (3)"
+  m_Name: Nick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1322,10 +1322,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2064925547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 453, y: 0}
-  m_SizeDelta: {x: -934.18, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -112.41, y: 0}
+  m_SizeDelta: {x: 224.82, y: 154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1896813678
 MonoBehaviour:
@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 15, y: 0, z: 15, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
