@@ -15,4 +15,10 @@ public class SettingsMenu : MonoBehaviour
     {
         AudioManager.Instance.SetSFXVolume(sfxSlider.value);
     }
+
+    public void toggleShowSliders()
+    {
+        bgmSlider.gameObject.SetActive(!bgmSlider.gameObject.activeSelf);
+        sfxSlider.gameObject.SetActive(!sfxSlider.gameObject.activeSelf);
+    }
 }
