@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -108,5 +109,24 @@ public class AudioManager : MonoBehaviour
         Instance.sfxSource.clip = null;
         Instance.sfxSource.loop = false;
         Instance.sfxSource.PlayOneShot(Instance.portalTeleportFX);
+    }
+    
+    public static void PlayGnome()
+    {
+        if (!Instance) return;
+        Instance.sfxSource.clip = null;
+        Instance.sfxSource.loop = false;
+        Instance.sfxSource.PlayOneShot(Instance.gnomeWoo);
+    }
+
+    public static void StopAllMusic()
+    {
+        if (!Instance) return;
+        Instance.bgmSource.Stop();
+        Instance.sfxSource.Stop();
+        Instance.sfxSource.clip = null;
+        Instance.sfxSource.loop = false;
+        Instance.bgmSource.clip = null;
+        Instance.bgmSource.loop = false;
     }
 }

@@ -9,6 +9,7 @@ public class Lantern : Interactable
     public Sprite unlitSprite;
     // Setting the lit sprite specifically because doing so in awake will cause the default sprite to be the unlit one.
     public Sprite litSprite;
+    public bool isTheFinalLantern = false;
 
     protected override void OnSetTransform()
     {
@@ -22,7 +23,12 @@ public class Lantern : Interactable
         base.Interact();
         if ((!lanternLight2D.gameObject.activeSelf && !canBeTurnedBackOn) || !interactable) return;
         lanternLight2D.gameObject.SetActive(!lanternLight2D.gameObject.activeSelf);
-        if (!lanternLight2D.gameObject.activeSelf) AudioManager.PlayTurnOffLampFX(); 
+        if (!lanternLight2D.gameObject.activeSelf) AudioManager.PlayTurnOffLampFX();
+        if (!lanternLight2D.gameObject.activeSelf && isTheFinalLantern)
+        {
+            AudioManager.StopAllMusic();
+            AudioManager.PlayGnome();
+        }
         GetComponent<SpriteRenderer>().sprite = lanternLight2D.gameObject.activeSelf ? unlitSprite : litSprite;
         
         if (canBeTurnedBackOn) return;
