@@ -101,4 +101,12 @@ public class AudioManager : MonoBehaviour
         int randomIndex = Random.Range(0, Instance.turnOffLampFX.Count);
         Instance.sfxSource.PlayOneShot(Instance.turnOffLampFX[randomIndex]);
     }
+
+    public static void PlayPortalTeleport()
+    {
+        if (!Instance) return;
+        Instance.sfxSource.clip = null;
+        Instance.sfxSource.loop = false;
+        Instance.sfxSource.PlayOneShot(Instance.portalTeleportFX);
+    }
 }

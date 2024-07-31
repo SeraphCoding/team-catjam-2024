@@ -32,6 +32,11 @@ public class Lantern : Interactable
     // Enables rotation and interaction when powered or disables them when unpowered.
     public void ToggleLanternPower(bool powered)
     {
+        if (!interactable && !isRotatable && powered)
+        {
+            // play the powered audio once when you get powered
+            AudioManager.PlayPowerLampFX();
+        }
         isRotatable = powered;
         interactable = powered;
         noAction = powered ? null : "No power!";
@@ -42,6 +47,6 @@ public class Lantern : Interactable
         } 
         
         GetComponent<SpriteRenderer>().sprite = powered ? litSprite : unlitSprite;
-        if (powered) AudioManager.PlayPowerLampFX();
+        
     }
 }

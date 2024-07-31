@@ -24,6 +24,7 @@ public class Portal : Interactable
     public override void Interact()
     {
         base.Interact();
+        AudioManager.PlayPortalTeleport();
         SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
 }
