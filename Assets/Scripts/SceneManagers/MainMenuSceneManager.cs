@@ -29,12 +29,14 @@ namespace SceneManagers
         // Not implemented yet - this is just to test the save system 
         public void CreateNewGame()
         {
+            AudioManager.PlayClickFX();
             SaveSystemSingleton.Instance.ResetGame();
             SceneManager.LoadScene(tutorialScene, LoadSceneMode.Single);
         }
         
         public void LoadGame()
         {
+            AudioManager.PlayClickFX();
             SceneManager.LoadScene(SaveSystemSingleton.Instance.CurrentSceneName, LoadSceneMode.Single);
         }
 

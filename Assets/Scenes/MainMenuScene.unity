@@ -1529,37 +1529,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263315158}
   m_CullTransparentMesh: 1
---- !u!1 &1303810939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1303810940}
-  m_Layer: 0
-  m_Name: SettingsMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1303810940
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303810939}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 99.96992, y: 20.3122, z: -4913.586}
-  m_LocalScale: {x: 53.1, y: 53.1, z: 53.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1800378330}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1437468334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,7 +2165,6 @@ RectTransform:
   - {fileID: 1719046296}
   - {fileID: 755881546}
   - {fileID: 1112651248}
-  - {fileID: 1303810940}
   - {fileID: 1942409924}
   - {fileID: 1263315159}
   m_Father: {fileID: 0}
@@ -2424,7 +2392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -40.285}
+  m_AnchoredPosition: {x: 0, y: -40.285004}
   m_SizeDelta: {x: 0, y: 80.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1942409925
@@ -2883,6 +2851,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3026765379044069528, guid: 17c1801f711cddf4aa6b74d09dae2a4f, type: 3}
+      propertyPath: clickFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 769047d8267628945b76ecea5e72c023, type: 3}
     - target: {fileID: 7554933479320962597, guid: 17c1801f711cddf4aa6b74d09dae2a4f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5288674

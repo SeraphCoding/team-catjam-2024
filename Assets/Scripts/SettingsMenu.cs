@@ -8,6 +8,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void UpdateBGMVolume()
     {
+        AudioManager.PlayClickFX();
         AudioManager.Instance.SetBGMVolume(bgmSlider.value);
     }
     
