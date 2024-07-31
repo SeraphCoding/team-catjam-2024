@@ -151,6 +151,7 @@ public class Player : MonoBehaviour
 
     private void StopAnimation()
     {
+        AudioManager.CatWalk(false);
         _anim.speed = 0;
         // If the animation is not set to the first frame, the cat will stand on just some of its legs when the player is frozen.
         _anim.Play(0, 0, 0); // reset the animation
@@ -158,6 +159,7 @@ public class Player : MonoBehaviour
 
     private void StartAnimation()
     {
+        AudioManager.CatWalk(true);
         _anim.speed = 1;
     }
 }

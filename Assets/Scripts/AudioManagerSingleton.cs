@@ -5,6 +5,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioClip mainMenuBGM;
     public AudioClip gnomeWoo;
+    public AudioClip catWalking;
     public AudioClip clickFX;
     public AudioSource bgmSource;
     public AudioSource sfxSource;
@@ -35,6 +36,13 @@ public class AudioManager : MonoBehaviour
         SaveSettings();
     }
 
+
+
+    private void SaveSettings()
+    {
+        SaveSystemSingleton.Instance.SaveGameSettings(bgmSource.volume, sfxSource.volume);
+    }
+    
     public static void PlayClickFX()
     {
         if (Instance)
@@ -43,9 +51,24 @@ public class AudioManager : MonoBehaviour
             
         }
     }
-
-    private void SaveSettings()
+    
+    public static void CatWalk(bool isWalking)
     {
-        SaveSystemSingleton.Instance.SaveGameSettings(bgmSource.volume, sfxSource.volume);
+        if (!Instance) return;
+        if (Instance.sfxSource.isPlaying && Instance.sfxSource.clip == Instance.catWalking && !isWalking)
+        {
+           Instance.sfxSource.Pause();
+        }
+        if (!Instance.sfxSource.isPlaying && Instance.sfxSource.clip == Instance.catWalking && isWalking)
+        {
+            Instance.sfxSource.UnPause();
+        }
+        if (Instance.sfxSource.clip != Instance.catWalking && isWalking)
+        {
+            Instance.sfxSource.clip = Instance.catWalking;
+            Instance.sfxSource.loop = true;
+            Instance.sfxSource.Play();
+        }
+            
     }
 }

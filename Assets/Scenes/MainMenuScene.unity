@@ -2855,6 +2855,10 @@ PrefabInstance:
       propertyPath: clickFX
       value: 
       objectReference: {fileID: 8300000, guid: 769047d8267628945b76ecea5e72c023, type: 3}
+    - target: {fileID: 3026765379044069528, guid: 17c1801f711cddf4aa6b74d09dae2a4f, type: 3}
+      propertyPath: catWalking
+      value: 
+      objectReference: {fileID: 8300000, guid: a93e7f1a8e09ddc4387cba745d165af0, type: 3}
     - target: {fileID: 7554933479320962597, guid: 17c1801f711cddf4aa6b74d09dae2a4f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5288674
